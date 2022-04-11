@@ -10,6 +10,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -41,11 +42,10 @@ public class ExaminerServiceImplTest {
         assertNotNull(jService);
 
         Mockito.when(jService.getAll()).thenReturn(questionSet);
+
         Assertions.assertEquals(jService.getAll().size(), 3);
-
-        Set<Question> set = (Set<Question>) service.getQuestions(1);
-
-        Mockito.verify(jService,Mockito.times(1)).getRandomQuestion();
+        Collection<Question> questions = service.getQuestions(1);
+        Assertions.assertEquals( questions.size(),1);
     }
 
     @Test

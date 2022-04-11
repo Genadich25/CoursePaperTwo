@@ -1,6 +1,7 @@
-package com.coursetwo.coursepapertwo.services;
+package com.coursetwo.coursepapertwo.controllers;
 
 import com.coursetwo.coursepapertwo.data.Question;
+import com.coursetwo.coursepapertwo.services.ExaminerServiceImpl;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
