@@ -1,19 +1,14 @@
-package com.coursetwo.coursepapertwo.services;
+package com.coursetwo.coursepapertwo.repositories;
 
 import com.coursetwo.coursepapertwo.data.Question;
 
 import java.util.Collection;
 
-public interface QuestionService {
-
-    Question add(String question, String answer);
+public interface QuestionRepository {
 
     Question add(Question question);
 
     Question remove(Question question);
 
     Collection<Question> getAll();
-
-    Question getRandomQuestion();
-
 }
