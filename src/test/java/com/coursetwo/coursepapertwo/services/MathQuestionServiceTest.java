@@ -3,7 +3,7 @@ package com.coursetwo.coursepapertwo.services;
 import com.coursetwo.coursepapertwo.data.Question;
 import com.coursetwo.coursepapertwo.exceptions.BadRequestException;
 import com.coursetwo.coursepapertwo.exceptions.NotFoundQuestionException;
-import com.coursetwo.coursepapertwo.repositories.JavaQuestionRepository;
+import com.coursetwo.coursepapertwo.repositories.MathQuestionRepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -16,21 +16,20 @@ import java.util.HashSet;
 import java.util.Set;
 
 @ExtendWith(MockitoExtension.class)
-public class JavaQuestionServiceTest {
-
-    private JavaQuestionService service;
+public class MathQuestionServiceTest {
+    private MathQuestionService service;
     private Question ques1;
     private Question ques2;
     private Set<Question> questionSet;
 
     @Mock
-    public JavaQuestionRepository repository;
+    public MathQuestionRepository repository;
 
     @BeforeEach
     public void setUp(){
         ques1 = new Question("Какая погода?", "Ясно");
         ques2 = new Question("Как дела?", "Отлично");
-        service = new JavaQuestionService(repository);
+        service = new MathQuestionService(repository);
         questionSet = new HashSet<>(Set.of(
                 new Question("Как дела?", "Отлично"),
                 new Question("Вопрос2", "Ответ2"),
@@ -91,5 +90,4 @@ public class JavaQuestionServiceTest {
         Mockito.when(repository.getAll()).thenReturn(questionSet);
         Assertions.assertThrows(NotFoundQuestionException.class,() -> service.remove(ques1));
     }
-
 }

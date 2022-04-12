@@ -1,7 +1,7 @@
 package com.coursetwo.coursepapertwo.controllers;
 
 import com.coursetwo.coursepapertwo.data.Question;
-import com.coursetwo.coursepapertwo.services.JavaQuestionService;
+import com.coursetwo.coursepapertwo.services.MathQuestionService;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Collection;
 
 @RestController
-@RequestMapping( path = "/exam/java")
-public class JavaQuestionController {
-    private final JavaQuestionService service;
+@RequestMapping( path = "/exam/math")
+public class MathQuestionController {
+    private final MathQuestionService service;
 
-    public JavaQuestionController(@Qualifier("javaQuestionService")JavaQuestionService service) {
+    public MathQuestionController(@Qualifier("mathQuestionService") MathQuestionService service) {
         this.service = service;
     }
 

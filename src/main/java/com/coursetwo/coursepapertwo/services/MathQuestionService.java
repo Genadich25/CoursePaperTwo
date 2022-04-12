@@ -3,7 +3,7 @@ package com.coursetwo.coursepapertwo.services;
 import com.coursetwo.coursepapertwo.data.Question;
 import com.coursetwo.coursepapertwo.exceptions.BadRequestException;
 import com.coursetwo.coursepapertwo.exceptions.NotFoundQuestionException;
-import com.coursetwo.coursepapertwo.repositories.JavaQuestionRepository;
+import com.coursetwo.coursepapertwo.repositories.MathQuestionRepository;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
@@ -11,11 +11,11 @@ import java.util.Collection;
 import java.util.Random;
 
 @Service
-public class JavaQuestionService implements QuestionService{
+public class MathQuestionService implements QuestionService {
 
-    private final JavaQuestionRepository repository;
+    private final MathQuestionRepository repository;
 
-    public JavaQuestionService(@Qualifier("javaQuestionRepository")JavaQuestionRepository repository) {
+    public MathQuestionService(@Qualifier("mathQuestionRepository") MathQuestionRepository repository) {
         this.repository = repository;
     }
 
